@@ -1,0 +1,35 @@
+1. Hozz létre egy createdatabase.php fájlt, ezen belül hozd létre a kapcsolatot és egy bike nevű adatbázist. 
+3p
+
+2. Hozz létre a connect.php fájlt amely létrehozza a kapcsolatot a létrehozott adatbázissal. 
+2 pont
+
+3. Hozz létre egy createtable.php oldalt, ahol behúzod a connect.php-t és 
+létrehozod az alábbi táblát a bikes nevű adatbázisban:
+CREATE TABLE `products` (
+  `id` int NOT NULL,
+  `image` varchar(255)  NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `price` float NOT NULL,
+  `quantity` int NOT NULL
+) ENGINE=InnoDB  ;
+3 pont
+
+4. Hozz létre egy insertdata.php nevű fájlt.
+Szúrd be az alábbi adatokat az adatbázisba:
+(1, 'bike1.jpg', 'Orient Vita Pro 28', 284.5, 11),
+(2, 'bike2.jpg', 'Orient S-400 26', 198, 12),
+(3, 'bike3.jpg', 'Bullet Bora 20', 240.99, 4),
+(4, 'bike4.jpg', 'Speed king 26', 345.99, 7),
+(5, 'bike5.jpg', 'Speed king 26', 420.5, 14),
+(6, 'bike6.jpg', 'Offroad X STS 26', 399, 9);
+
+Ha minden adat bekerül: 3 pont, ha egy sor akkor 1 pont
+
+5. Hozz létre egy createjson.php fájlt, ahol jelenítsd meg az adatbázisban lévő adatokat. Használj színkiemelést is.
+4 pont
+
+Összesen: 15 pont
+
+
+

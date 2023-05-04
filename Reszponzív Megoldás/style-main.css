@@ -1,0 +1,241 @@
+body {
+	margin: 0;
+}
+
+body {
+	font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
+	font-size: 18px;
+	line-height: 1.5;
+}
+
+
+p {
+	margin-bottom: 1.5em;
+}
+
+b,
+strong {
+	font-weight: bold;
+}
+
+figure {
+	margin: 0;
+}
+
+
+/*--------------------------------------------------------------
+General styling
+--------------------------------------------------------------*/
+img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+
+/*--------------------------------------------------------------
+Header:
+--------------------------------------------------------------*/
+
+.masthead {
+	padding: 0 1em;
+	text-align: center;
+	border-bottom: 1px solid hsl(0, 0%, 90%);
+}
+
+/*--------------------------------------------------------------
+Navigation:
+--------------------------------------------------------------*/
+.main-nav {
+	padding: 1em;
+	font-size: 1.1em;
+	color: white;
+    background-color: hsl(0, 0%, 10%);
+}
+
+.main-nav ul {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+.main-nav a {
+	padding: .4em 1em;
+	color: white;
+	text-decoration: none;
+}
+
+.main-nav a:focus,
+.main-nav a:hover {
+	text-decoration: underline;
+}
+
+/*--------------------------------------------------------------
+Cards:
+--------------------------------------------------------------*/
+
+.cards {
+	max-width: 25em;
+	margin: 1em auto;
+	padding: 0;
+	list-style-type: none;
+
+}
+
+.cards a {
+	margin-bottom: 1em;
+	text-decoration: none;
+}
+
+.caption {
+	padding: 1em;
+	font-size: 90%;
+	color: black;
+}
+
+.caption-title {
+	margin: 0;
+	font-size: 1.4em;
+	line-height: 1em;
+}
+
+.caption p {
+	margin-top: .5em;
+	margin-bottom: 0;
+}
+
+.cards a:focus .caption,
+.cards a:hover .caption {
+	background: hsl(0, 0%, 97%);
+}
+
+
+/*--------------------------------------------------------------
+Sidebar:
+--------------------------------------------------------------*/
+
+.twin {
+	padding: 2em;
+	background: #2185C5;
+	color: white;
+}
+
+.twin:last-of-type {
+	background: #FF7F66;
+}
+
+/*--------------------------------------------------------------
+Footer:
+--------------------------------------------------------------*/
+
+.colophon {
+	padding: 2em;
+	background: hsl(0, 0%, 10%);
+	color: white;
+	text-align: center;
+}
+
+.colophon a {
+	color: white;
+}
+
+.colophon a:hover,
+.colophon a:focus {
+	border-bottom: 1px solid white;
+}
+
+/*--------------------------------------------------------------
+CSS Grid layout for wider screens, when browser supports grid:
+--------------------------------------------------------------*/
+@supports (grid-area: auto) {
+
+	@media screen and (min-width: 27em) {
+
+		.cards {
+			margin: 0 auto;
+			padding: 1em;
+		}
+
+		.card {
+			margin: 1em 0;
+			padding: .5em;
+			display: grid;
+			grid-template-columns: 8em auto;
+		}
+
+		.cards a:focus,
+		.cards a:hover {
+			outline: 1px solid hsl(0, 0%, 80%);
+		}
+
+
+	}
+	@media screen and (min-width: 45em) {
+	
+		.cards{
+			max-width: none;
+			margin: 1em 0;
+			display: grid;
+			grid-template-columns: repeat(2, 25em);
+			grid-gap: 1em;
+			justify-content: center;
+		}
+
+		.double {
+			grid-row: span 3;
+		}
+
+		.double .card {
+			display: block;
+		}
+		
+	}
+	@media screen and (min-width: 60em) {
+		.site{
+			display: grid;
+			grid-template-columns: 15em auto 15em;
+		}
+		.masthead, .main-nav{
+			grid-column: 1/4;
+		}
+		.main-area {
+			grid-column: 2/3;
+			
+		}
+		.cards{
+			max-width: none;
+			margin: 1em 0;
+			display: grid;
+			grid-template-columns: repeat(2, 25em);
+			grid-gap: 1em;
+			justify-content: center;
+		}
+
+		.double {
+			grid-row: span 3;
+		}
+
+		.double .card {
+			display: block;
+		}
+		.sidebar {
+			display: grid;
+			grid-template-columns: 15em auto 15em;
+			grid-column: 1/4;
+			grid-row: 3;
+			height: 0;
+		}
+
+		.twin:last-of-type {
+			grid-column: 3/4;
+		}
+
+		.colophon{
+			grid-column: 1/4;	
+		}
+	}
+
+}
